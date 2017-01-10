@@ -12,4 +12,21 @@ This Specialization is unique, because it offers two real-world projects. Advanc
 Assignments for Data Structures on Coursera with time and memory results from grader </br>
 
 ## Week 1
-### Basic Data Structures
+###  Prgramming Assignment: [Basic Data Structures](https://github.com/mablatnik/Data-Structures/blob/master/data_structures/week_1/Programming-Assignment-1.pdf)
+Problem: [Check brackets in the code](https://github.com/mablatnik/Data-Structures/tree/master/data_structures/week_1/starter_code_PA1/check_brackets_in_code) </br>
+
+* Python: Max time used: 0.10/1.00, max memory used: 15974400/536870912
+* Java: 
+* C++: 
+
+Problem: [Compute tree height](https://github.com/mablatnik/Data-Structures/tree/master/data_structures/week_1/starter_code_PA1/tree_height) </br>
+
+* Python: 
+* Java: 
+* C++: 
+
+Problem: [Network packet processing simulation](https://github.com/mablatnik/Data-Structures/tree/master/data_structures/week_1/starter_code_PA1/network_packet_processing_simulation) </br>
+
+* Python: 
+* Java: 
+* C++: 

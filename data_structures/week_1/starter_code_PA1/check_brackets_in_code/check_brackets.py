@@ -7,7 +7,7 @@ class Bracket:
         self.bracket_type = bracket_type
         self.position = position
 
-    def Match(self, c):
+    def match(self, c):
         if self.bracket_type == '[' and c == ']':
             return True
         if self.bracket_type == '{' and c == '}':
@@ -16,37 +16,29 @@ class Bracket:
             return True
         return False
 
-if __name__ == "__main__":
-    text = sys.stdin.read()
-
-    last_index = 1
-    open_flag = False
-
+def bracket_check(text):
     opening_brackets_stack = []
-    for i, next in enumerate(text):
-        if next == '(' or next == '[' or next == '{':
-            open_flag = True
-            last_index = i + 1
-            item = Bracket(next, i+1)
-            opening_brackets_stack.append(item)
+    for index, next in enumerate(text, start=1):
+        if next in ("[", "(", "{"):
+            opening_brackets_stack.append(Bracket(next, index))
 
-        if next == ')' or next == ']' or next == '}':
-            if len(opening_brackets_stack) == 0:
-                last_index = i + 1
-                break
+        elif next in ("]", ")", "}"):
+            if not opening_brackets_stack:
+                return index;
 
-            last = opening_brackets_stack.pop()
-            if not last.Match(next):
-                last_index = i + 1
-                break
+            top = opening_brackets_stack.pop()
+            if not top.match(next):
+                return index
+    if opening_brackets_stack:
+        top = opening_brackets_stack.pop()
+        return top.position
 
-            last_index = i + 1
+    return "Success"
 
-    if (len(opening_brackets_stack) == 0) and open_flag and (last_index % 2 == 0):
-        print("Success")
-    elif (len(text) != last_index) and (len(opening_brackets_stack) != 0):
-        print(opening_brackets_stack[-1].position)
-    else:
-        print(last_index)
+
+
+if __name__ == "__main__":
+    text = sys.stdin.read().strip("\n")
+    print(bracket_check(text))
 
 
