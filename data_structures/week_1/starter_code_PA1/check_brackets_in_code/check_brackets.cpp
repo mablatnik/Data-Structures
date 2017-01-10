@@ -2,13 +2,14 @@
 #include <stack>
 #include <string>
 
+
 struct Bracket {
     Bracket(char type, int position):
         type(type),
         position(position)
     {}
 
-    bool Matchc(char c) {
+    bool Match(char c) {
         if (type == '[' && c == ']')
             return true;
         if (type == '{' && c == '}')
@@ -24,22 +25,39 @@ struct Bracket {
 
 int main() {
     std::string text;
-    getline(std::cin, text);
+    // getline(std::cin, text);
+    text = "[]";
 
     std::stack <Bracket> opening_brackets_stack;
+    bool flag = false;
     for (int position = 0; position < text.length(); ++position) {
         char next = text[position];
 
         if (next == '(' || next == '[' || next == '{') {
-            // Process opening bracket, write your code here
-        }
+            opening_brackets_stack.push(Bracket(next, position));
 
-        if (next == ')' || next == ']' || next == '}') {
-            // Process closing bracket, write your code here
+        } else if (next == ')' || next == ']' || next == '}') {
+            if (opening_brackets_stack.size() > 0) {
+                std::cout << position;
+                flag = true;
+                break;
+            }
+            Bracket* top = opening_brackets_stack.pop();
+            if (top.Match(next) == false) {
+                std::cout << opening_brackets_stack.pop().position;
+                flag = true;
+                break;
+            }
         }
     }
 
-    // Printing answer, write your code here
+    if (opening_brackets_stack.size() > 0) {
+        Bracket* top = opening_brackets_stack.pop();
+        std::cout << top.position;
+        flag = true;
+    }
 
-    return 0;
+    if (flag == false) {
+        std::cout << "Success";
+    }
 }

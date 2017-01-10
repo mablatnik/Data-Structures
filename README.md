@@ -21,7 +21,7 @@ Problem: [Check brackets in the code](https://github.com/mablatnik/Data-Structur
 
 Problem: [Compute tree height](https://github.com/mablatnik/Data-Structures/tree/master/data_structures/week_1/starter_code_PA1/tree_height) </br>
 
-* Python: 
+* Python: Max time used: 0.10/1.00, max memory used: 15974400/536870912
 * Java: 
 * C++: 
 
