@@ -41,7 +41,7 @@ Problem: [Convert array into heap]() </br>
 
 Problem: [Parallel processing]() </br>
 
-* Python:
+* Python: Max time used: 1.03/6.00, max memory used: 41918464/536870912
 * Java: 
 * C++: 
 
