@@ -30,3 +30,23 @@ Problem: [Network packet processing simulation](https://github.com/mablatnik/Dat
 * Python: Max time used: 0.93/8.00, max memory used: 50212864/536870912
 * Java: 
 * C++: 
+
+## Week 3
+###  Prgramming Assignment: [Priority Queues and Disjoint Sets]()
+Problem: [Convert array into heap]() </br>
+
+* Python: Max time used: 0.10/1.00, max memory used: 15974400/536870912
+* Java: 
+* C++:
+
+Problem: [Parallel processing]() </br>
+
+* Python:
+* Java: 
+* C++: 
+
+Problem: [Merging tables]() </br>
+
+* Python:
+* Java: 
+* C++: 
