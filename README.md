@@ -27,6 +27,6 @@ Problem: [Compute tree height](https://github.com/mablatnik/Data-Structures/tree
 
 Problem: [Network packet processing simulation](https://github.com/mablatnik/Data-Structures/tree/master/data_structures/week_1/starter_code_PA1/network_packet_processing_simulation) </br>
 
-* Python: 
+* Python: Max time used: 0.93/8.00, max memory used: 50212864/536870912
 * Java: 
 * C++: 
