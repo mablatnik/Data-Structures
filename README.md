@@ -47,6 +47,6 @@ Problem: [Parallel processing]() </br>
 
 Problem: [Merging tables]() </br>
 
-* Python:
+* Python: Max time used: 1.20/6.00, max memory used: 157966336/536870912
 * Java: 
 * C++: 
