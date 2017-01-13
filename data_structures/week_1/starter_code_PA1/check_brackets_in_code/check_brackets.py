@@ -2,6 +2,7 @@
 
 import sys
 
+
 class Bracket:
     def __init__(self, bracket_type, position):
         self.bracket_type = bracket_type
@@ -16,6 +17,7 @@ class Bracket:
             return True
         return False
 
+
 def bracket_check(text):
     opening_brackets_stack = []
     for index, next in enumerate(text, start=1):
@@ -24,7 +26,7 @@ def bracket_check(text):
 
         elif next in ("]", ")", "}"):
             if not opening_brackets_stack:
-                return index;
+                return index
 
             top = opening_brackets_stack.pop()
             if not top.match(next):
@@ -36,9 +38,6 @@ def bracket_check(text):
     return "Success"
 
 
-
 if __name__ == "__main__":
     text = sys.stdin.read().strip("\n")
     print(bracket_check(text))
-
-

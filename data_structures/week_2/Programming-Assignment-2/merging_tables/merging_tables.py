@@ -2,11 +2,12 @@
 
 import sys
 
+
 class DisjointSet(object):
     def __init__(self, n, lines):
         self.n = n
         self.lines = [0] + lines
-        self.rank = [0] * (n+1)
+        self.rank = [0] * (n + 1)
         self.parent = list(range(0, n + 1))
         self.max = max(self.lines)
 
@@ -46,6 +47,7 @@ class DisjointSet(object):
 
     def get_max(self):
         return self.max
+
 
 if __name__ == "__main__":
     n, m = map(int, sys.stdin.readline().split())
