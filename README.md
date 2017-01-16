@@ -50,3 +50,24 @@ Problem: [Merging tables]() </br>
 * Python: Max time used: 1.20/6.00, max memory used: 157966336/536870912
 * Java: 
 * C++: 
+
+## Week 4
+###  Prgramming Assignment: [Hash Tables and Hash Functions]()
+Problem: [Phone book]() </br>
+
+* Python:
+* Java: 
+* C++:
+
+
+Problem: [Hashing with chains]() </br>
+
+* Python: 
+* Java: 
+* C++:
+
+Problem: [Find pattern in text]() </br>
+
+* Python: 
+* Java: 
+* C++:
