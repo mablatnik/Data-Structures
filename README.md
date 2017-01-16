@@ -55,14 +55,14 @@ Problem: [Merging tables]() </br>
 ###  Prgramming Assignment: [Hash Tables and Hash Functions]()
 Problem: [Phone book]() </br>
 
-* Python:
+* Python: Max time used: 0.68/6.00, max memory used: 98324480/671088640
 * Java: 
 * C++:
 
 
 Problem: [Hashing with chains]() </br>
 
-* Python: 
+* Python: Max time used: 0.75/7.00, max memory used: 24621056/536870912
 * Java: 
 * C++:
 
