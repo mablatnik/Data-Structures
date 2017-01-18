@@ -1,18 +1,12 @@
 # python3
 
-def read_input():
-    return (input().rstrip(), input().rstrip())
+class TextSearch:
+	def __init__:
+		self._pattern = pattern
+		self._text = text
+		self._window = len(pattern)
+		self._scan_bound = len(text) - len(pattern) + 1
 
-def print_occurrences(output):
-    print(' '.join(map(str, output)))
-
-def get_occurrences(pattern, text):
-    return [
-        i 
-        for i in range(len(text) - len(pattern) + 1) 
-        if text[i:i + len(pattern)] == pattern
-    ]
-
-if __name__ == '__main__':
-    print_occurrences(get_occurrences(*read_input()))
+	def chekcsum(self, string):
+		
 
