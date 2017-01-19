@@ -84,7 +84,7 @@ Problem: [Set with range sums]() </br>
 
 * Python:
 * Java: 
-* C++:
+* C++: Max time used: 0.13/1.00, max memory used: 35995648/536870912
 
 Problem: [Rope]() </br>
 

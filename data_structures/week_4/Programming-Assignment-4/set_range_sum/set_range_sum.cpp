@@ -1,4 +1,5 @@
-#include <cstdio>
+#include <cstddef>
+#include <iostream>
 
 // Splay tree implementation
 
@@ -12,13 +13,20 @@ struct Vertex {
   Vertex* right;
   Vertex* parent;
 
-  Vertex(int key, long long sum, Vertex* left, Vertex* right, Vertex* parent) 
-  : key(key), sum(sum), left(left), right(right), parent(parent) {}
+  Vertex(int key, long long sum, Vertex* left, Vertex* right, Vertex* parent)
+  : key(key),
+  sum(sum),
+  left(left),
+  right(right),
+  parent(parent)
+  {
+  }
 };
 
 void update(Vertex* v) {
   if (v == NULL) return;
-  v->sum = v->key + (v->left != NULL ? v->left->sum : 0ll) + (v->right != NULL ? v->right->sum : 0ll);
+  v->sum = v->key + (v->left != NULL ? v->left->sum : 0ll) +
+            (v->right != NULL ? v->right->sum : 0ll);
   if (v->left != NULL) {
     v->left->parent = v;
   }
@@ -67,7 +75,7 @@ void big_rotation(Vertex* v) {
     // Zig-zag
     small_rotation(v);
     small_rotation(v);
-  }  
+  }
 }
 
 // Makes splay of the given vertex and makes
@@ -149,7 +157,7 @@ Vertex* root = NULL;
 void insert(int x) {
   Vertex* left = NULL;
   Vertex* right = NULL;
-  Vertex* new_vertex = NULL;  
+  Vertex* new_vertex = NULL;
   split(root, x, left, right);
   if (right == NULL || right->key != x) {
     new_vertex = new Vertex(x, x, NULL, NULL, NULL);
@@ -157,14 +165,33 @@ void insert(int x) {
   root = merge(merge(left, new_vertex), right);
 }
 
-void erase(int x) {                   
-  // Implement erase yourself
+void erase(int x) {
+  Vertex *v = find( root, x);
+  splay( root, v);
+
+  if ( v == nullptr || v->key != x )
+    return;
+
+  if ( v && v->key == x )
+  {
+    root = merge( root->left, root->right );
+    if ( root )
+      root->parent = nullptr;
+  }
 
 }
 
-bool find(int x) {  
-  // Implement find yourself
+bool find(int x) {
+  Vertex *v = find( root, x );
+  splay( root, v );
 
+  if ( v == nullptr || v->key != x )
+    return false;
+
+  if ( v->key == x )
+  {
+    return true;
+  }
   return false;
 }
 
@@ -175,9 +202,14 @@ long long sum(int from, int to) {
   split(root, from, left, middle);
   split(middle, to + 1, middle, right);
   long long ans = 0;
-  // Complete the implementation of sum
-  
-  return ans;  
+  update( left );
+  update( right );
+  update( middle );
+  if ( middle != nullptr )
+    ans = middle->sum;
+
+  root = merge( merge( left, middle ), right );
+  return ans;
 }
 
 const int MODULO = 1000000001;
