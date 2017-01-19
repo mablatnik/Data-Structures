@@ -27,28 +27,73 @@ public:
     }
   }
 
+  struct Node
+  {
+    int key;
+    int left;
+    int right;
+  };
 
-  vector <int> in_order() {
+  void inorder_traversal( std::vector<int> &result, int nodeIdx)
+  {
+    if (nodeIdx == -1)
+      return;
+    int k = key[nodeIdx];
+    int l = left[nodeIdx];
+    int r = right[nodeIdx];
+
+    inorder_traversal( result, l);
+    result.push_back( k );
+    inorder_traversal( result, r);
+  }
+
+  vector<int> in_order()
+  {
+    if (key.empty())
+      return std::vector<int>();
+
     vector<int> result;
-    // Finish the implementation
-    // You may need to add a new recursive method to do that
-
+    inorder_traversal(result, 0);
     return result;
   }
 
-  vector <int> pre_order() {
-    vector<int> result;    
-    // Finish the implementation
-    // You may need to add a new recursive method to do that
-    
+  void preorder_traversal(std::vector<int> &result, int nodeIdx)
+  {
+    if ( nodeIdx == -1 )
+      return;
+
+    result.push_back( key[ nodeIdx ] );
+    preorder_traversal( result, left[ nodeIdx ] );
+    preorder_traversal( result, right[ nodeIdx ] );
+  }
+
+  vector<int> pre_order()
+  {
+    if ( key.empty() )
+      return std::vector<int>();
+
+    vector<int> result;
+    preorder_traversal(result, 0);
     return result;
   }
 
-  vector <int> post_order() {
+  void postorder_traversal(std::vector<int> &result, int nodeIdx)
+  {
+    if ( nodeIdx == -1 )
+      return;
+
+    postorder_traversal( result, left[ nodeIdx ] );
+    postorder_traversal( result, right[ nodeIdx ] );
+    result.push_back( key[ nodeIdx ] );
+  }
+
+  vector<int> post_order()
+  {
+    if ( key.empty() )
+      return std::vector<int>();
+
     vector<int> result;
-    // Finish the implementation
-    // You may need to add a new recursive method to do that
-    
+    postorder_traversal(result, 0);
     return result;
   }
 };

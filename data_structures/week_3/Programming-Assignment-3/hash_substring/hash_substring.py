@@ -1,12 +1,15 @@
 # python3
 
-class TextSearch:
-	def __init__:
-		self._pattern = pattern
-		self._text = text
-		self._window = len(pattern)
-		self._scan_bound = len(text) - len(pattern) + 1
+import random
 
-	def chekcsum(self, string):
-		
+prime = 1000000007
+x = random.randint(1, prime -1)
 
+def read_input():
+	return (input().rstrip(), input().rstrip())
+
+def print_occurences(output):
+	print(' '.join(map(str, output)))
+
+def precompute_hashes(text, plen, pattern, x):
+	

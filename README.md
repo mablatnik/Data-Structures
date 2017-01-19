@@ -71,3 +71,23 @@ Problem: [Find pattern in text]() </br>
 * Python: 
 * Java: 
 * C++:
+
+## Week 5
+###  Prgramming Assignment: [Binary Search Trees]()
+Problem: [Binary tree traversals]() </br>
+
+* Python: 
+* Java: 
+* C++: Max time used: 0.07/1.00, max memory used: 28282880/536870912
+
+Problem: [Set with range sums]() </br>
+
+* Python:
+* Java: 
+* C++:
+
+Problem: [Rope]() </br>
+
+* Python:
+* Java: 
+* C++:
